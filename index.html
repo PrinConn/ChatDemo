@@ -13,6 +13,13 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.enableLogging();
   /* Dynamic data */
   liveagent.addCustomDetail('Contact Name', 'Matt', true);
+  liveagent.findOrCreate('Case')
+    .map('Topic__c', 'Robust Wealth', false, false, true)
+    .map('Subject', 'Test Chat', false, false, true)
+    .map('Status', 'In Progress', false, false, true)
+    .map('Contract_Number__c', '397011', false, false, true)
+    .saveToTranscript('CaseId')
+    .showOnCreate();
   liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', '5722C000000Gmgl', '00D2C0000000qaR');
 </script>
 
