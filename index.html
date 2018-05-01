@@ -36,7 +36,7 @@ liveagent.addCustomDetail('Last Name', 'Doe');
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
   liveagent.findOrCreate('Case')
-    .map('RecordTypeId', 'RecordType', false, false, true) */
+    .map('RecordTypeId', 'RecordType', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
     .saveToTranscript('CaseId')
