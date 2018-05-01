@@ -18,6 +18,19 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('Contract Number', '397011', true);
   liveagent.addCustomDetail('CaseOrigin','Live Chat', true);
   liveagent.addCustomDetail('RecordType','0122C0000008e4jQAA', true);
+  
+  /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
+liveagent.addCustomDetail('Contact E-mail', 'jane@doe.com');
+
+/* Creates a custom detail called First Name and sets the value to Jane */
+liveagent.addCustomDetail('First Name', 'Jane');
+
+/* Creates a custom detail called Last Name and sets the value to Doe */
+liveagent.addCustomDetail('Last Name', 'Doe');
+
+/* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
+liveagent.addCustomDetail('Phone Number', '415-555-1212');
+  
   liveagent.findOrCreate('Case')
     .map('Topic__c', 'Platform', false, false, true)
     .map('Subject', 'Subject', false, false, true)
@@ -27,6 +40,12 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .map('RecordTypeId', 'RecordType', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
+  /* An auto-query that searches Contacts whose Email field exactly matches 'jane@doe.com'. If no result is found, it will create a Contact record with the email, first name, last name, and phone number fields set to the custom detail values. */
+liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,true).map('FirstName','First Name',false,false,true).map('LastName','Last Name',false,false,true).map('Phone','Phone Number',false,false,true);
+
+/* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
+liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId'); 
+  
   /* Sets the display name of the visitor in the agent console when engaged in a chat */
     liveagent.setName('Jamie');
 /* Sets the width of the chat window to 500px */
