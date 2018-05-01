@@ -12,12 +12,12 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-  liveagent.addCustomDetail('Platform', 'Robust Wealth', true);
+/*  liveagent.addCustomDetail('Platform', 'Robust Wealth', true); */
   liveagent.addCustomDetail('Subject', 'Test Chat', true);
   liveagent.addCustomDetail('Status','New', true);
-  liveagent.addCustomDetail('Contract Number', '397011', true);
-  liveagent.addCustomDetail('CaseOrigin','Live Chat', true);
-  liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true);
+/*  liveagent.addCustomDetail('Contract Number', '397011', true); */
+/*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
+/*  liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true); */
   
   /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
 liveagent.addCustomDetail('Contact E-mail', 'jane@doe.com');
@@ -32,14 +32,14 @@ liveagent.addCustomDetail('Last Name', 'Doe');
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
   liveagent.findOrCreate('Case')
-    .map('Topic__c', 'Platform', false, false, true)
+/*    .map('Topic__c', 'Platform', false, false, true) */
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
-    .map('Origin', 'CaseOrigin', false, false, true)
-    .map('Contract_Number__c', 'Contract Number', false, false, true)
-    .map('RecordTypeId', 'RecordType', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
+  /*    .map('Origin', 'CaseOrigin', false, false, true) */
+/*    .map('Contract_Number__c', 'Contract Number', false, false, true) */
+/*    .map('RecordTypeId', 'RecordType', false, false, true) */
   /* An auto-query that searches Contacts whose Email field exactly matches 'jane@doe.com'. If no result is found, it will create a Contact record with the email, first name, last name, and phone number fields set to the custom detail values. */
 liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,true).map('FirstName','First Name',false,false,true).map('LastName','Last Name',false,false,true).map('Phone','Phone Number',false,false,true);
 
