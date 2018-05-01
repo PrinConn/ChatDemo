@@ -17,12 +17,14 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('Status','New', true);
   liveagent.addCustomDetail('Contract Number', '397011', true);
   liveagent.addCustomDetail('CaseOrigin','Live Chat', true);
+  liveagent.addCustomDetail('RecordType','0122C0000008e4jQAA', true);
   liveagent.findOrCreate('Case')
     .map('Topic__c', 'Platform', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
     .map('Origin', 'CaseOrigin', false, false, true)
     .map('Contract_Number__c', 'Contract Number', false, false, true)
+    .map('RecordTypeId', 'RecordType', false, false, true);
     .saveToTranscript('CaseId')
     .showOnCreate();
   /* Sets the display name of the visitor in the agent console when engaged in a chat */
