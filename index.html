@@ -12,7 +12,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-/*  liveagent.addCustomDetail('Platform', 'Robust Wealth', true); */
+  liveagent.addCustomDetail('Topic', 'EDS', true);
   liveagent.addCustomDetail('Subject', 'Test Chat', true);
   liveagent.addCustomDetail('Status','New', true);
   liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true); 
@@ -29,11 +29,14 @@ liveagent.addCustomDetail('First Name', 'Jane');
 /* Creates a custom detail called Last Name and sets the value to Doe */
 liveagent.addCustomDetail('Last Name', 'Doe');
 
+  /* Creates a custom detail called Topic and sets the value to Doe */
+/* liveagent.addCustomDetail('Last Name', 'Doe'); */
+  
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
   liveagent.findOrCreate('Case')
-/*    .map('Topic__c', 'Platform', false, false, true) */
+    .map('Topic__c', 'Topic', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
     .saveToTranscript('CaseId')
