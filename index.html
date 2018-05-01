@@ -1,6 +1,6 @@
 <html>
 <body>
-This is the NEW body
+This is the NEWER body
 
 <a id="liveagent_button_online_5732C000000GmsI" href="javascript://Chat" style="display: block;" onclick="liveagent.startChat('5732C000000GmsI')">Chat Now!</a><div id="liveagent_button_offline_5732C000000GmsI" style="display: block;">Please Hold</div><script type="text/javascript">
 if (!window._laq) { window._laq = []; }
@@ -12,12 +12,15 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-  liveagent.addCustomDetail('Contact Name', 'Matt', true);
+  liveagent.addCustomDetail('Platform', 'Robust Wealth', true);
+  liveagent.addCustomDetail('Subject', 'Test Chat', true);
+  liveagent.addCustomDetail('Status','In Progress', true);
+  liveagent.addCustomDetail('Contract Number', '397011, true);
   liveagent.findOrCreate('Case')
-    .map('Topic__c', 'Robust Wealth', false, false, true)
-    .map('Subject', 'Test Chat', false, false, true)
-    .map('Status', 'In Progress', false, false, true)
-    .map('Contract_Number__c', '397011', false, false, true)
+    .map('Topic__c', 'Platform', false, false, true)
+    .map('Subject', 'Subject', false, false, true)
+    .map('Status', 'Status', false, false, true)
+    .map('Contract_Number__c', 'Contract Number', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
   liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', '5722C000000Gmgl', '00D2C0000000qaR');
