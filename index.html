@@ -16,7 +16,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('Status','New', true);
   liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true); 
   liveagent.addCustomDetail('EnterpriseID','M39R9093U', true);
-/*  liveagent.addCustomDetail('Contract Number', '397011', true); */
+  liveagent.addCustomDetail('Contract Number', '397011', true);
 /*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
 
   
@@ -39,7 +39,8 @@ liveagent.addCustomDetail('Phone Number', '415-555-1212');
     .map('RecordTypeId', 'RecordType', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
-    .saveToTranscript('CaseId')
+    .map('Contract_Number__c','Contract Number', false, false, true)
+    .saveToTranscript('Case ID')
     .showOnCreate();
   /*    .map('Topic__c', 'Topic', false, false, true) */
   /*    .map('Origin', 'CaseOrigin', false, false, true) */
