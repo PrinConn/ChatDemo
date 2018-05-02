@@ -12,10 +12,10 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-  liveagent.addCustomDetail('Topic', 'EDS', true);
   liveagent.addCustomDetail('Subject', 'Test Chat', true);
   liveagent.addCustomDetail('Status','New', true);
   liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true); 
+  liveagent.addCustomDetail('EnterpriseID','M39R9093U', true);
 /*  liveagent.addCustomDetail('Contract Number', '397011', true); */
 /*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
 
@@ -46,7 +46,7 @@ liveagent.addCustomDetail('Phone Number', '415-555-1212');
 /*    .map('Contract_Number__c', 'Contract Number', false, false, true) */
 /*    .map('RecordTypeId', 'RecordType', false, false, true) */
   /* An auto-query that searches Contacts whose Email field exactly matches 'jane@doe.com'. If no result is found, it will create a Contact record with the email, first name, last name, and phone number fields set to the custom detail values. */
-liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,false).map('FirstName','First Name',false,false,false).map('LastName','Last Name',false,false,false).map('Phone','Phone Number',false,false,false);
+liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,false).map('FirstName','First Name',false,false,false).map('LastName','Last Name',false,false,false).map('Phone','Phone Number',false,false,false)map('Contact_Source_ID__c','EnterpriseID',false,false,false);
 
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
 liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId'); 
