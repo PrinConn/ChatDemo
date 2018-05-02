@@ -53,6 +53,8 @@ liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','Contract Number'
 
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
 liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId'); 
+/*  Link Contract to entity */
+liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').linkToEntity('Case','ContractId'); 
   
   /* Sets the display name of the visitor in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 2');
