@@ -39,15 +39,15 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
 liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false);  
   
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
-liveagent.findOrCreate('Contact').saveToTranscript('ContactId').linkToEntity('Case','ContactId'); 
+liveagent.findOrCreate('Contact').saveToTranscript('ContactId');
 /*  Link Contract to entity */
-liveagent.findOrCreate('Contract').saveToTranscript('ContractId').linkToEntity('Case','ContractId');   
+liveagent.findOrCreate('Contract').saveToTranscript('ContractId');  
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
-    .map('ContractId','ContractNumber', false, false, true)
+    .map('ContractId','ContractId', false, false, true)
     .map('ContactId','ContactId', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
