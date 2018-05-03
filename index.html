@@ -36,9 +36,9 @@ liveagent.addCustomDetail('Last Name', 'Doe');
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
-liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId'); 
+liveagent.findOrCreate('Contact').saveToTranscript('Id').showOnCreate().linkToEntity('Case','Id'); 
 /*  Link Contract to entity */
-liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').linkToEntity('Case','ContractId');   
+liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').linkToEntity('Case','Id');   
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true)
