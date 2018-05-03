@@ -16,7 +16,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('Status','New', true);
   liveagent.addCustomDetail('RecordType','0122C0000008e4sQAA', true); 
   liveagent.addCustomDetail('EnterpriseID','M39R9093U', true);
-  liveagent.addCustomDetail('Contract Number', '397011', true);
+  liveagent.addCustomDetail('ContractNumber', '397011', true);
 /*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
 
   
@@ -36,7 +36,7 @@ liveagent.addCustomDetail('Last Name', 'Doe');
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
 liveagent.findOrCreate('Contact').map('Contact_Source_ID__c','EnterpriseID',true,true,false);
-liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','Contract Number',true,true,false);  
+liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false);  
   
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
 liveagent.findOrCreate('Contact').saveToTranscript('ContactId').linkToEntity('Case','ContactId'); 
@@ -47,7 +47,7 @@ liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').lin
     .map('RecordTypeId', 'RecordType', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
-    .map('ContractId','Contract Number', false, false, true)
+    .map('ContractId','ContractNumber', false, false, true)
     .map('ContactId','ContactId', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
