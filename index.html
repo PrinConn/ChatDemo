@@ -50,7 +50,6 @@ liveagent.findOrCreate('Contract').saveToTranscript('ContractId');
     .map('Status', 'Status', false, false, true)
     .map('ContactId','ContactId', false, false, true)
     .saveToTranscript('CaseId')
-    .linkToEntity('Contact',
     .showOnCreate();
 
 
