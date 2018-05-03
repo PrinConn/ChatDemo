@@ -48,7 +48,6 @@ liveagent.findOrCreate('Contract').saveToTranscript('ContractId');
     .map('RecordTypeId', 'RecordType', false, false, true)
     .map('Subject', 'Subject', false, false, true)
     .map('Status', 'Status', false, false, true)
-    .map('ContractId','ContractId', false, false, true)
     .map('ContactId','ContactId', false, false, true)
     .saveToTranscript('CaseId')
     .linkToEntity('Contact',
