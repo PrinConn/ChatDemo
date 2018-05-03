@@ -41,7 +41,7 @@ liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
 liveagent.findOrCreate('Contact').saveToTranscript('ContactId').linkToEntity('Case','ContactId'); 
 /*  Link Contract to entity */
-liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').linkToEntity('Case','ContractId');   
+liveagent.findOrCreate('Contract').saveToTranscript('ContractID').linkToEntity('Case','ContractId');   
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true)
