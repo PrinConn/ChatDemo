@@ -35,8 +35,11 @@ liveagent.addCustomDetail('Last Name', 'Doe');
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
 liveagent.addCustomDetail('Phone Number', '415-555-1212');
   
+liveagent.findOrCreate('Contact').map('Contact_Source_ID__c','EnterpriseID',true,true,false);
+liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','Contract Number',true,true,false);  
+  
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
-liveagent.findOrCreate('Contact').saveToTranscript('Id').showOnCreate().linkToEntity('Case','Id'); 
+liveagent.findOrCreate('Contact').saveToTranscript('Id').linkToEntity('Case','Id'); 
 /*  Link Contract to entity */
 liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').linkToEntity('Case','Id');   
   
@@ -55,8 +58,6 @@ liveagent.findOrCreate('Contract').saveToTranscript('Contract_Source_ID__c').lin
 /*    .map('RecordTypeId', 'RecordType', false, false, true) */
   /* An auto-query that searches Contacts whose Email field exactly matches 'jane@doe.com'. If no result is found, it will create a Contact record with the email, first name, last name, and phone number fields set to the custom detail values. */
 /*liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,false).map('FirstName','First Name',false,false,false).map('LastName','Last Name',false,false,false).map('Phone','Phone Number',false,false,false).map('Contact_Source_ID__c','EnterpriseID',false,false,false);*/
-liveagent.findOrCreate('Contact').map('Contact_Source_ID__c','EnterpriseID',true,true,false);
-liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','Contract Number',true,true,false);  
 
   
   /* Sets the display name of the visitor in the agent console when engaged in a chat */
