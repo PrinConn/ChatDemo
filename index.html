@@ -21,22 +21,20 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 
   
   /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
-liveagent.addCustomDetail('Contact E-mail', 'jane@doe.com');
+liveagent.addCustomDetail('Contact E-mail', 'noel@oasis.com');
 
 /* Creates a custom detail called First Name and sets the value to Jane */
-liveagent.addCustomDetail('First Name', 'Jane');
+liveagent.addCustomDetail('First Name', 'Noel');
 
 /* Creates a custom detail called Last Name and sets the value to Doe */
-liveagent.addCustomDetail('Last Name', 'Doe');
+liveagent.addCustomDetail('Last Name', 'Gallagher');
 
-  /* Creates a custom detail called Topic and sets the value to Doe */
-/* liveagent.addCustomDetail('Last Name', 'Doe'); */
   
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
-liveagent.addCustomDetail('Phone Number', '415-555-1212');
+liveagent.addCustomDetail('Phone Number', '312-555-1212');
 /* An auto-query that searches Contacts whose Contact_Distinct). If no result is found, it will create a Contact record with the email, first name, last name, and phone number fields set to the custom detail values. */  
 /* liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,true); */
-liveagent.findOrCreate('Contact').map('Email','Contact E-mail',false,false,true).map('FirstName','First Name',false,false,false).map('LastName','Last Name',false,false,false).map('Phone','Phone Number',false,false,false).map('Contact_Distinct_ID__c','EnterpriseID',true,true,false);  
+liveagent.findOrCreate('Contact').map('Email','Contact E-mail',true,true,true).map('FirstName','First Name',false,false,false).map('LastName','Last Name',false,false,false).map('Phone','Phone Number',false,false,false));  
 liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false);  
   
 /* The contact that's found or created will be saved or associated to the chat transcript. The contact will be opened for the agent in the Console and the case is linked to the contact record */
