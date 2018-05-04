@@ -44,7 +44,8 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
 
   
 /*  Link Contract to entity */
-liveagent.findOrCreate('Contract').saveToTranscript('ContractId'); 
+/*liveagent.findOrCreate('Contract').saveToTranscript('ContractId'); */
+  liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true)
