@@ -50,10 +50,10 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
   
   liveagent.findOrCreate('Case')
-    .map('RecordTypeId', 'RecordType', true, true, true)
-    .map('Subject', 'Subject', false, false, true)
-    .map('Status', 'Status', false, false, true)
-    .map('ContactId','ContactId', true, true, true)
+    .map('RecordTypeId', 'RecordType', true, true, false)
+    .map('Subject', 'Subject', false, false, false)
+    .map('Status', 'Status', false, false, false)
+    .map('ContactId','ContactId', true, true, false)
     .saveToTranscript('CaseId')
     .showOnCreate();
   
