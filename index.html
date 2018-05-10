@@ -51,8 +51,8 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', true, true, true)
-    .map('Subject', 'Subject', true, true, true)
-    .map('Status', 'Status', true, true, true)
+    .map('Subject', 'Subject', false, false, true)
+    .map('Status', 'Status', false, false, true)
     .map('ContactId','ContactId', true, true, true)
     .saveToTranscript('CaseId')
     .showOnCreate();
