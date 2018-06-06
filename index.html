@@ -34,7 +34,7 @@ liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',
     .map('Status', 'Status', false, false, true) 
     /*.map('ContactId','ContactId', false, false, true) */
     .saveToTranscript('CaseId')
-    .showOnCreate(); */
+    .showOnCreate(); 
   
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
