@@ -17,7 +17,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     /*This is the record type for PAS*/
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS', true); 
   /*EID for the user */
-  liveagent.addCustomDetail('EnterpriseID','R74M7363MConsumer', true);
+  liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer', true);
   /*Contract Number for the person */
   liveagent.addCustomDetail('ContractNumber', '397011', true);
 /*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
@@ -25,9 +25,9 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
 liveagent.addCustomDetail('Contact E-mail', 'noel@oasis.com');
 /* Creates a custom detail called First Name and sets the value to Jane */
-liveagent.addCustomDetail('First Name', 'Noel');
+liveagent.addCustomDetail('First Name', 'Carla');
 /* Creates a custom detail called Last Name and sets the value to Doe */
-liveagent.addCustomDetail('Last Name', 'Gallagher');
+liveagent.addCustomDetail('Last Name', 'Jennings');
   
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
 liveagent.addCustomDetail('Phone Number', '312-555-1212');
@@ -43,7 +43,7 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   
 /*  Link Contract to entity */
 /*liveagent.findOrCreate('Contract').saveToTranscript('ContractId'); */
-  liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
+/*  liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c'); */
   
   liveagent.findOrCreate('Case')
  /*   .map('RecordTypeId', 'RecordType', false, false, true) */
