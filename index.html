@@ -12,8 +12,8 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-  liveagent.addCustomDetail('Subject', 'New Test Chat');
-  liveagent.addCustomDetail('Status','New');
+  liveagent.addCustomDetail('Case_Subject', 'New Test Chat');
+  liveagent.addCustomDetail('Case_Status','New');
     /*This is the record type for PAS*/
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
   /*EID for the user */
@@ -34,13 +34,13 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
 /*liveagent.findOrCreate('Contract').saveToTranscript('ContractId'); */
 /*  liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c'); */
   
-  liveagent.findOrCreate('Case')
- /*   .map('RecordTypeId', 'RecordType', false, false, true) */
+  liveagent.findOrCreate('Case').map('Subject', 'Case_Subject', false, false, true).map('Status', 'Case_Status', false, false, true).saveToTranscript('CaseId').showOnCreate(); 
+ /*   .map('RecordTypeId', 'RecordType', false, false, true) 
     .map('Subject', 'Subject', false, false, true) 
     .map('Status', 'Status', false, false, true) 
-/*    .map('ContactId','ContactId', false, false, true) */
+   .map('ContactId','ContactId', false, false, true) 
     .saveToTranscript('CaseId')
-    .showOnCreate();
+    .showOnCreate(); */
   
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
