@@ -12,7 +12,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript'>
   liveagent.enableLogging();
   /* Dynamic data */
-  liveagent.addCustomDetail('Case_Subject', 'New Test Chat');
+  liveagent.addCustomDetail('Case_Subject', 'New Test Chat 13');
   liveagent.addCustomDetail('Case_Status','New');
     /*This is the record type for PAS*/
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
@@ -27,7 +27,7 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   /* Code to search for related contract.  It will not create a contract if one does not exist */
 liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c'); 
   
-  liveagent.findOrCreate('Case').map('Subject','Case_Subject',false,false,true).map('Status','Case_Status',false,false,true).saveToTranscript('CaseId').showOnCreate();
+  liveagent.findOrCreate('Case').map('Subject','Case_Subject',true,true,true).map('Status','Case_Status',false,false,true).saveToTranscript('CaseId').showOnCreate();
   
 /*  liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', true, true, true) 
