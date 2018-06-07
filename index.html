@@ -26,7 +26,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 /*  liveagent.findOrCreate('Case').map('Subject','CaseSubject',false,false,true).map('Status','CaseStatus',false,false,true).saveToTranscript('CaseId').showOnCreate();
 */  
     liveagent.findOrCreate('Case')
-    .map('RecordTypeId', 'RecordType', true, true, true) 
+    .map('RecordTypeId', 'RecordType', false, false, true) 
     .map('Subject', 'CaseSubject', false, false, true) 
     .map('Status', 'CaseStatus', false, false, true) 
     .map('ContactId','ContactId', false, false, true) 
