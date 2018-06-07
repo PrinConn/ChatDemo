@@ -23,21 +23,18 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* An auto-query that searches Contacts whose Contact_Distinct). If no result is found, it will not create a Contact record. */  
   liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false); 
   
-  liveagent.findOrCreate('Case').map('Subject','CaseSubject',false,false,true).map('Status','CaseStatus',false,false,true).saveToTranscript('CaseId').showOnCreate();
-  
-/*  liveagent.findOrCreate('Case')
+/*  liveagent.findOrCreate('Case').map('Subject','CaseSubject',false,false,true).map('Status','CaseStatus',false,false,true).saveToTranscript('CaseId').showOnCreate();
+*/  
+    liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', true, true, true) 
     .map('Subject', 'CaseSubject', false, false, true) 
     .map('Status', 'CaseStatus', false, false, true) 
     .map('ContactId','ContactId', false, false, true) 
     .saveToTranscript('CaseId')
-    .showOnCreate(); */
+    .showOnCreate(); 
   
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
-  
-  /*  Attempting to set a non-relationship field in deployment API */
-  liveagent.addCustomDetail('WebToken','Green').saveToTranscript('Visitor_WebToChatAuthentication__c');
-  
+   
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 20');
 /* Sets the width of the chat window to 500px */
