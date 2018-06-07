@@ -40,6 +40,9 @@ liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',
   
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
+  /*  Attempting to set a non-relationship field in deployment API */
+  liveagent.addCustomDetail('WebToken','This is a web token').saveToTranscript('Visitor_WebToChatAuthentication__c');
+  
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 14');
 /* Sets the width of the chat window to 500px */
