@@ -21,7 +21,10 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
 
   /* An auto-query that searches Contacts whose Contact_Distinct). If no result is found, it will not create a Contact record. */  
-  liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false); 
+  liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false)
+    .saveToTranscript('ContactId')
+    .showOnCreate()
+    .linkToEntity('ChatToken__c','Contact__c');
   
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true).map('Contact__c','Contact',false,false,true)
@@ -37,7 +40,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .saveToTranscript('CaseId')
     .showOnCreate(); 
   
-  liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate();
+ /* liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate(); */
    
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 20');
