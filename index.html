@@ -21,7 +21,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
   
   liveagent.addCustomDetail('Token','This is me, promise');
-  liveagent.findOrCreate(ChatToken__c).map('Visitor_Token__c','Token',false,false,true).saveToTranscript('ChatToken__c');
+  liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true).saveToTranscript('ChatToken__c');
 
   /* An auto-query that searches Contacts whose Contact_Distinct). If no result is found, it will not create a Contact record. */  
   liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false); 
