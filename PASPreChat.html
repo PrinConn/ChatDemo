@@ -27,7 +27,9 @@
 
 <form method='post' id='prechatForm'> 
 
-      Web to Chat Token: <input type='text' name='liveagent.prechat:WebToChatToken'/><br/>
+      Web to Chat Token: <input type='text' name='liveagent.prechat:WebToChatToken' /><br/>
+      Email Address: <input type='text' name='liveagent.prechat:Email' /><br />
+      <input type="hidden" name="liveagent.prechat.save:Email" value="Email__c" />
       <input type="hidden" name="liveagent.prechat.save:WebToChatToken" value="Visitor_WebToChatAuthentication__c" />
       <input type='submit' value='Request Chat' id='prechat_submit'/>
 </form>
