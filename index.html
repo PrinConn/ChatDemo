@@ -26,7 +26,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false)
     .saveToTranscript('ContactId')
     .showOnCreate()
-    .linkToEntity('ChatToken__c','Contact__c';'Case','ContactId');
+    .linkToEntity('ChatToken__c','Contact__c');
   
   liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true).map('Contact__c','Contact',false,false,true)
     .saveToTranscript('ChatToken__c');
