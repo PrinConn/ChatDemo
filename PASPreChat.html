@@ -27,10 +27,19 @@
 
 <form method='post' id='prechatForm'> 
 
-      Web to Chat Token: <input type='text' name='liveagent.prechat:WebToChatToken' /><br/>
-      Email Address: <input type='text' name='liveagent.prechat:Email' /><br />
-      <input type="hidden" name="liveagent.prechat.save:Email" value="Email__c" />
-      <input type="hidden" name="liveagent.prechat.save:WebToChatToken" value="Visitor_WebToChatAuthentication__c" />
+      <!-- Creates an auto-query for a matching Contact 
+           record's  Email field based on the 
+           value of the liveagent.prechat:Email field 
+       -->
+      Web to Chat Token: <input type='text' name='liveagent.prechat:WebToChatToken'/><br/>
+      Email: <input type='text' name='liveagent.prechat:VisitorEmail'/><br/> 
+      <input type="hidden" name="liveagent.prechat.findorcreate.map:Contact" value="Email,VisitorEmail" />
+      <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true" />
+      <input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Contact" value="Email,true" />
+      <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="Email,true" />
+      <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="ContactId" />  
+      <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" />
+      <input type="hidden" name="liveagent.prechat.save:WebToChatToken" value="Visitor_WebToChatToken__c" />
       <input type='submit' value='Request Chat' id='prechat_submit'/>
 </form>
 </body>
