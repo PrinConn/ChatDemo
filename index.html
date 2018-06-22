@@ -14,6 +14,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* Dynamic data */
   liveagent.addCustomDetail('CaseSubject', 'Chat');
   liveagent.addCustomDetail('CaseStatus','New');
+  liveagent.addCustomDetail('CaseOrigin','Chat');
     /*This is the record type for PAS
       Will be unique for every different case */
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
@@ -35,6 +36,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .map('RecordTypeId', 'RecordType', false, false, true) 
     .map('Subject', 'CaseSubject', false, false, true) 
     .map('Status', 'CaseStatus', false, false, true) 
+    .map('Origin','CaseOrigin',false,false,true)
     .saveToTranscript('CaseId')
     .showOnCreate(); 
    
