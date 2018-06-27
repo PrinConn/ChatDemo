@@ -11,26 +11,32 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 <script type='text/javascript' src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/42.0/deployment.js'></script>
 <script type='text/javascript'>
   liveagent.enableLogging();
-  /* Dynamic data */
+  /* Case data */
   liveagent.addCustomDetail('CaseSubject', 'Chat');
   liveagent.addCustomDetail('CaseStatus','New');
   liveagent.addCustomDetail('CaseOrigin','Chat');
-    /*This is the record type for PAS
-      Will be unique for every different case */
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
   /*EID for the user */
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
-  /* Encrypted token goes here */
+  liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat');
+  /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
+  liveagent.addCustomDetail('ChatDeployment','5722C000000Gmgl');
 
   /* An auto-query that searches Contacts whose Contact_Distinct). If no result is found, it will not create a Contact record. */  
   liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false)
     .saveToTranscript('ContactId')
     .showOnCreate()
     .linkToEntity('ChatToken__c','Contact__c');
-  
-  liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true).map('Contact__c','Contact',false,false,true)
+  /* Creating chat token */
+  liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true)
+    .map('Deployment_Key_Setting__c','ChatDeployment',false,false,true)
+    .map('Contact__c','Contact',false,false,true)
     .saveToTranscript('ChatToken__c');
+  
+  /* Adding chat record type */
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
+     .saveToTranscript('RecordTypeId');
   
     liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
