@@ -17,7 +17,7 @@ liveagent.showWhenOffline('5732C000000CaZf', document.getElementById('liveagent_
   /*EID for the user */
   liveagent.addCustomDetail('EnterpriseID','R74M7363MConsumer', true);
   /*Contract Number for the person */
-  liveagent.addCustomDetail('ContractNumber', '397011', true);
+  liveagent.addCustomDetail('ContractNumber', '617148', true);
 /*  liveagent.addCustomDetail('CaseOrigin','Live Chat', true); */
   
   /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
@@ -56,7 +56,7 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
-    liveagent.setName('Jaime from Robust Wealth Step 2');
+    liveagent.setName('John Roberts');
 /* Sets the width of the chat window to 500px */
     liveagent.setChatWindowWidth(500);
 /* Sets the height of the chat window to 500px */
