@@ -8,6 +8,9 @@ liveagent.showWhenOffline('5732C000000CaZf', document.getElementById('liveagent_
 });</script>
 <script type='text/javascript' src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/43.0/deployment.js'></script>
 <script type='text/javascript'>
+  var firstName = 'Noel';
+  var lastName = 'Gallagher';
+  var name = firstName + lastName;
   liveagent.enableLogging();
   /* Dynamic data */
   liveagent.addCustomDetail('Subject', 'New Test Chat', true);
@@ -23,9 +26,9 @@ liveagent.showWhenOffline('5732C000000CaZf', document.getElementById('liveagent_
   /* Adds a custom detail called Contact Email and sets it value to jane@doe.com */
 liveagent.addCustomDetail('Contact E-mail', 'noel@oasis.com');
 /* Creates a custom detail called First Name and sets the value to Jane */
-liveagent.addCustomDetail('First Name', 'Noel');
+liveagent.addCustomDetail('First Name', firstName);
 /* Creates a custom detail called Last Name and sets the value to Doe */
-liveagent.addCustomDetail('Last Name', 'Gallagher');
+liveagent.addCustomDetail('Last Name', lastName);
   
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
 liveagent.addCustomDetail('Phone Number', '312-555-1212');
@@ -56,7 +59,7 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
-    liveagent.setName('John Roberts');
+    liveagent.setName(name);
 /* Sets the width of the chat window to 500px */
     liveagent.setChatWindowWidth(500);
 /* Sets the height of the chat window to 500px */
