@@ -56,8 +56,6 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
     .saveToTranscript('CaseId')
     .showOnCreate();
   
-  liveagent.findOrCreate('Case');
-  
   liveagent.findOrCreate('Contact').saveToTranscript('ContactId').showOnCreate().linkToEntity('Case','ContactId');
   
   /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
