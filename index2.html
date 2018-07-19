@@ -29,6 +29,8 @@ liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
 liveagent.addCustomDetail('First Name', firstName);
 /* Creates a custom detail called Last Name and sets the value to Doe */
 liveagent.addCustomDetail('Last Name', lastName);
+  liveagent.addCustomDetail('ChatRecordType','FSA_SponsorChat');
+ liveagent.addCustomDetail('Token', 'This is me, promise');
   
 /* Creates a custom detail called Phone Number and sets the value to 415-555-1212 */
 liveagent.addCustomDetail('Phone Number', '312-555-1212');
@@ -47,6 +49,20 @@ liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',tr
 /*  Link Contract to entity */
 /*liveagent.findOrCreate('Contract').saveToTranscript('ContractId'); */
   liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
+    liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c','EnterpriseID',true,true,false)
+    .saveToTranscript('ContactId')
+    .showOnCreate()
+    .linkToEntity('ChatToken__c','Contact__c');
+  /* Creating chat token */
+  liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true)
+    .map('Deployment_Key_Setting__c','ChatDeployment',false,false,true)
+    .map('Contact__c','Contact',false,false,true)
+    .saveToTranscript('ChatToken__c');
+  
+  /* Adding chat record type */
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
+     .saveToTranscript('RecordTypeId');
+  
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true)
