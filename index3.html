@@ -19,14 +19,14 @@
 			liveagent.addCustomDetail('EnterpriseID', 'R80M1221MBusiness Client', true);
 			liveagent.addCustomDetail('ContractNumber', '617148', true);
 			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
-			liveagent.addCustomDetail('First Name', firstName);
-			liveagent.addCustomDetail('Last Name', lastName);
-			liveagent.addCustomDetail('ChatRecordType', 'FSA_SponsorChat');
-			liveagent.addCustomDetail('Token', 'This is me, promise');
-			liveagent.addCustomDetail('Phone Number', '312-555-1212');
-			liveagent.addCustomDetail('CaseOrigin', 'Chat');
-			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1');
-			liveagent.addCustomDetail('CaseStatus', 'New');
+			liveagent.addCustomDetail('First Name', firstName, true);
+			liveagent.addCustomDetail('Last Name', lastName, true);
+			liveagent.addCustomDetail('ChatRecordType', 'FSA_SponsorChat', true);
+			liveagent.addCustomDetail('Token', 'This is me, promise', true);
+			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
+			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
+			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
+			liveagent.addCustomDetail('CaseStatus', 'New', true);
 			
 			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).showOnCreate();
 			liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
@@ -55,7 +55,7 @@
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'RecordType', true, true, false)
 				.map('Subject', 'CaseSubject', true, true, true)
-				.showOnCreate('Case', true);
+				.showOnCreate();
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
