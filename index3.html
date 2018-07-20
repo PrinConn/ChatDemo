@@ -1,0 +1,59 @@
+<html>
+	<body>
+		This is the body of index3.html
+		<a id="liveagent_button_online_5732C000000CaZf" href="javascript://Chat" style="display: none;" 				   onclick="liveagent.startChat('5732C000000CaZf')">Click to Chat</a><div id="liveagent_button_offline_5732C000000CaZf" style="display: none;">Chat is not available</div><script type="text/javascript">
+		if (!window._laq) { window._laq = []; }
+		window._laq.push(function(){liveagent.showWhenOnline('5732C000000CaZf', document.getElementById('liveagent_button_online_5732C000000CaZf'));
+			liveagent.showWhenOffline('5732C000000CaZf', document.getElementById('liveagent_button_offline_5732C000000CaZf'));
+		});</script>
+		<script type='text/javascript' src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/43.0/deployment.js'></script>
+		<script type='text/javascript'>
+		
+			var firstName = 'John';
+			var lastName = 'Doe';
+			var name = firstName + ' ' + lastName;
+			
+			liveagent.enableLogging();
+			liveagent.addCustomDetail('RecordType', '0122C000000CpRvQAK', true);
+			liveagent.addCustomDetail('EnterpriseID', 'R80M1221MBusiness Client', true);
+			liveagent.addCustomDetail('ContractNumber', '617148', true);
+			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
+			liveagent.addCustomDetail('First Name', firstName);
+			liveagent.addCustomDetail('Last Name', lastName);
+			liveagent.addCustomDetail('ChatRecordType', 'FSA_SponsorChat');
+			liveagent.addCustomDetail('Token', 'This is me, promise');
+			liveagent.addCustomDetail('Phone Number', '312-555-1212');
+			liveagent.addCustomDetail('CaseOrigin', 'Chat');
+			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1');
+			liveagent.addCustomDetail('CaseStatus, 'New');
+			
+			liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
+			
+			liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
+				.saveToTranscript('ContactId')
+				.showOnCreate()
+				.linkToEntity('ChatToken__c', 'Contact__c');
+			
+			liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c', 'Token', false, false, true)
+				.map('Deployment_Key_Setting__c', 'ChatDeployment', false, false, true)
+				.map('Contact__c', 'Contact', false, false, true)
+				.saveToTranscript('ChatToken__c');
+				
+			liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
+				.saveToTranscript('RecordTypeId');
+				
+			liveagent.findOrCreate('Case')
+				.map('RecordTypeId', 'RecordType', false, false, true)
+				.map('Subject', 'CaseSubject', false, false, true)
+				.map('Status', 'CaseStatus', false, false, true)
+				.map('Origin', 'CaseOrigin', false, false, true)
+				.saveToTranscript('CaseId')
+				.showOnCreate();
+			
+			liveagent.setName(name);
+			liveagent.setChatWindowWidth(500);
+			liveagent.setChatWindowHeight(500);
+			liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', '5722C0000004CR2', '00D2C0000000qaR');
+		</script>
+	</body>
+</html>
