@@ -55,7 +55,7 @@
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'RecordType', true, true, false)
 				.map('Subject', 'CaseSubject', true, true, true)
-				.showOnCreate();
+				.showOnCreate('Case', true);
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
