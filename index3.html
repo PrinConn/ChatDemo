@@ -42,10 +42,11 @@
 				.linkToEntity('ChatToken__c', 'Contact__c');
 			
 			//liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
-			//	.saveToTranscript('RecordTypeId');	
+			//	.saveToTranscript('RecordTypeId');
+			
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'RecordType', true, true, false)
-				.map('Subject', 'CaseSubject', false, false, true)
+				.map('Subject', 'CaseSubject', true, true, true)
 				.map('Status', 'CaseStatus', true, true, false)
 				.map('Origin', 'CaseOrigin', true, true, false)
 				.saveToTranscript('CaseId')
