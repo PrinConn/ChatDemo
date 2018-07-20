@@ -40,8 +40,8 @@
 				.map('Contact__c', 'Contact', false, false, true)
 				.saveToTranscript('ChatToken__c');
 				
-			liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
-				.saveToTranscript('RecordTypeId');
+			//liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
+			//	.saveToTranscript('RecordTypeId');
 				
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'RecordType', false, false, true)
