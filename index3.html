@@ -44,12 +44,17 @@
 			//liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
 			//	.saveToTranscript('RecordTypeId');
 			
+			//liveagent.findOrCreate('Case')
+			//	.map('RecordTypeId', 'RecordType', true, true, false)
+			//	.map('Subject', 'CaseSubject', true, true, true)
+			//	.map('Status', 'CaseStatus', true, true, false)
+			//	.map('Origin', 'CaseOrigin', true, true, false)
+			//	.saveToTranscript('CaseId')
+			//	.showOnCreate();
+			
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'RecordType', true, true, false)
 				.map('Subject', 'CaseSubject', true, true, true)
-				.map('Status', 'CaseStatus', true, true, false)
-				.map('Origin', 'CaseOrigin', true, true, false)
-				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
 			liveagent.setName(name);
