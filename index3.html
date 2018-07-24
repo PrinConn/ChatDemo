@@ -28,6 +28,7 @@
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
 			liveagent.addCustomDetail('CaseStatus', 'New', true);
+			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			
 			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).showOnCreate();
 			liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
@@ -54,7 +55,7 @@
 			//	.showOnCreate();
 			
 			liveagent.findOrCreate('Case')
-				.map('RecordTypeId', 'CaseRecordType', true, true, true)
+				.map('Topic__c', 'CaseTopic', false, false, true)
 				.map('Status', 'CaseStatus', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
 				.saveToTranscript('CaseId')
