@@ -30,7 +30,6 @@
 			liveagent.addCustomDetail('CaseStatus', 'New', true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
-			liveagent.addCustomDetail('OrgId', '00D2C0000000qaR', true);
 			
 			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c').showOnCreate();
 			
@@ -56,7 +55,7 @@
 			//	.showOnCreate();
 			
 			liveagent.findOrCreate('Case')
-				.map('RecordTypeId', 'CaseRecordType', false, false, true)
+				.map('RecordTypeId', 'CaseRecordType', true, true, true)
 				.map('Status', 'CaseStatus', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
 				.saveToTranscript('CaseId')
@@ -65,7 +64,7 @@
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
 			liveagent.setChatWindowHeight(500);
-			liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', 'ChatDeployment', 'OrgId');
+			liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', 'ChatDeployment', '00D2C0000000qaR');
 		</script>
 	</body>
 </html>
