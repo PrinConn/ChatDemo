@@ -58,6 +58,7 @@
 				.map('Status', 'CaseStatus', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
 				.map('ContactId', 'ContactId', true, true, true)
+				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
 			liveagent.setName(name);
