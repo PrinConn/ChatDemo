@@ -58,6 +58,7 @@
 			//	.map('RecordTypeId', 'CaseRecordType', false, false, true)
 				.map('Status', 'CaseStatus', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
+			        .map('Origin','CaseOrigin',false,false,true)
 				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
