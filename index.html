@@ -39,7 +39,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
      .saveToTranscript('RecordTypeId');
   
     liveagent.findOrCreate('Case')
-    .map('RecordTypeId', 'RecordType', false, false, true) 
+ //   .map('RecordTypeId', 'RecordType', false, false, true) 
     .map('Subject', 'CaseSubject', false, false, true) 
     .map('Status', 'CaseStatus', false, false, true) 
     .map('Origin','CaseOrigin',false,false,true)
