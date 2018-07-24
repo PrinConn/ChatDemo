@@ -29,6 +29,7 @@
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
 			liveagent.addCustomDetail('CaseStatus', 'New', true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
+			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
 			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c').showOnCreate();
 			
