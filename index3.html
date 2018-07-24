@@ -16,7 +16,7 @@
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('LiveChatTranscriptRecordType', '0122C000000LCmnQAG', true);
-			liveagent.addCustomDetail('CaseRecordType', '0122C000000CpRvQAK'); 
+			liveagent.addCustomDetail('CaseRecordType', '012180000008r0EAAQ'); 
 			liveagent.addCustomDetail('EnterpriseID', 'R80M1221MBusiness Client', true);
 			liveagent.addCustomDetail('ContractNumber', '617148', true);
 			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
@@ -48,7 +48,7 @@
 			
 
 			liveagent.findOrCreate('Case')
-				.map('RecordTypeId', 'CaseRecordType', false, false, true)
+				.map('RecordTypeId', 'CaseRecordType', true, true, true)
                                 .map('Subject', 'CaseSubject', false, false, true) 
                                 .map('Status', 'CaseStatus', false, false, true) 
                                 .map('Origin','CaseOrigin',false,false,true)
