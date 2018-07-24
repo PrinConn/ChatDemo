@@ -47,11 +47,7 @@
 			//	.saveToTranscript('RecordTypeId');
 			
 
-			liveagent.findOrCreate('Case')
-				.map('RecordTypeId', 'CaseRecordType', true, true, false)
-                                .map('Subject', 'CaseSubject', false, false, true)
-                                .saveToTranscript('CaseId')
-                                .showOnCreate(); 
+			liveagent.findOrCreate('Case'); 
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
