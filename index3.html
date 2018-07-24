@@ -31,7 +31,7 @@
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
-			/*liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c').showOnCreate();
+			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c').showOnCreate();
 			
 			liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c', 'Token', false, false, true)
 				.map('Deployment_Key_Setting__c', 'ChatDeployment', false, false, true)
@@ -41,14 +41,14 @@
 			liveagent.findOrCreate('Contact').map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
 				.saveToTranscript('ContactId')
 				.showOnCreate()
-				.linkToEntity('ChatToken__c', 'Contact__c');*/
+				.linkToEntity('ChatToken__c', 'Contact__c');
 			
 			//liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
 			//	.saveToTranscript('RecordTypeId');
 			
 
 			liveagent.findOrCreate('Case')
-				.map('RecordTypeId', 'CaseRecordType', false, false, true)
+				.map('RecordTypeId', 'CaseRecordType', true, true, false)
                                 .map('Subject', 'CaseSubject', false, false, true)
                                 .saveToTranscript('CaseId')
                                 .showOnCreate(); 
