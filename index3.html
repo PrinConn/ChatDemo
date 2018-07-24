@@ -30,8 +30,7 @@
 			liveagent.addCustomDetail('CaseStatus', 'New', true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			
-			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).showOnCreate();
-			liveagent.findOrCreate('Contract').saveToTranscript('Chat_Contract__c');
+			liveagent.findOrCreate('Contract').map('Contract_Source_ID__c','ContractNumber',true,true,false).saveToTranscript('Chat_Contract__c').showOnCreate();
 			
 			liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c', 'Token', false, false, true)
 				.map('Deployment_Key_Setting__c', 'ChatDeployment', false, false, true)
@@ -54,12 +53,12 @@
 			//	.saveToTranscript('CaseId')
 			//	.showOnCreate();
 			
-			liveagent.findOrCreate('Case')
-				.map('Topic__c', 'CaseTopic', false, false, true)
-				.map('Status', 'CaseStatus', false, false, true)
-				.map('Subject', 'CaseSubject', false, false, true)
-				.saveToTranscript('CaseId')
-				.showOnCreate();
+			//liveagent.findOrCreate('Case')
+			//	.map('Topic__c', 'CaseTopic', false, false, true)
+			//	.map('Status', 'CaseStatus', false, false, true)
+			//	.map('Subject', 'CaseSubject', false, false, true)
+			//	.saveToTranscript('CaseId')
+			//	.showOnCreate();
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
