@@ -55,7 +55,7 @@
 			//	.showOnCreate();
 			
 			liveagent.findOrCreate('Case')
-				.map('Topic__c', 'CaseTopic', false, false, true)
+				.map('RecordTypeId', 'CaseRecordType', true, true, true)
 				.map('Status', 'CaseStatus', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
 				.saveToTranscript('CaseId')
