@@ -55,7 +55,7 @@
 			
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'CaseRecordType', true, true, true)
-				.map('Status', 'CaseStatus', true, true, false);
+				.map('Status', 'CaseStatus', true, true, false)
 				.showOnCreate();
 			
 			liveagent.setName(name);
