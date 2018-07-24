@@ -35,8 +35,8 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .saveToTranscript('ChatToken__c');
   
   /* Adding chat record type */
-  //liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
-  //   .saveToTranscript('RecordTypeId');
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
+     .saveToTranscript('RecordTypeId');
   
     liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
