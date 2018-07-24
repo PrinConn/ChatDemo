@@ -27,7 +27,6 @@
 			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
-			liveagent.addCustomDetail('CaseStatus', 'New', true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
@@ -50,7 +49,7 @@
 			liveagent.findOrCreate('Case')
 				.map('Origin', 'CaseOrigin')
 				.map('Subject', 'CaseSubject')
-				.map('Topic', 'CaseTopic')
+				.map('Topic__c', 'CaseTopic')
 				.showOnCreate(); 
 			
 			liveagent.setName(name);
