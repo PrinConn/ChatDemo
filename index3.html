@@ -60,8 +60,8 @@
 			//	.showOnCreate(); 
 			
 			liveagent.findOrCreate('RIS_FSA_HOLD_SOLD_DATE__c')
-				.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, false)
-				.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, false)
+				.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, true)
+				.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, true)
 				.showOnCreate();
 			
 			liveagent.setName(name);
