@@ -49,6 +49,7 @@
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			liveagent.addCustomDetail('StartDate', '2017-11-11', true);
 			liveagent.addCustomDetail('StopDate', '2017-11-11', true);
+			liveagent.addCustomDetail('AddedBulk', 'true', true);
 			
 			liveagent.findOrCreate('Contract')
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
@@ -72,9 +73,11 @@
 			
 
 			liveagent.findOrCreate('Case')
-				.map('Origin', 'CaseOrigin')
-				.map('Subject', 'CaseSubject')
-				.map('Topic__c', 'CaseTopic')
+				.map('RecordType', 'CaseRecordType', false, false, true)
+				.map('Origin', 'CaseOrigin', false, false, true)
+				.map('Subject', 'CaseSubject', false, false, true)
+				.map('Topic__c', 'CaseTopic', false, false, true)
+				.map('Created_Bulk_Cases__c', 'AddedBulk', false, false, true)
 				.saveToTranscript('CaseId')
 				.showOnCreate(); 
 			
