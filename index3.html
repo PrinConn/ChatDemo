@@ -24,18 +24,24 @@
 		
 			var firstName = 'John';
 			var lastName = 'Doe';
+			var EID = 'R80M1221M'
+			var typeClient = 'Business Client'
+			var finalEID = EID + typeClient;
+			var date = new Date();
+			var token = EID + date;
+			console.log(token);
 			var name = firstName + ' ' + lastName;
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('LiveChatTranscriptRecordType', '0122C000000LCmnQAG', true);
 			liveagent.addCustomDetail('CaseRecordType', '012180000008r0EAAQ'); 
-			liveagent.addCustomDetail('EnterpriseID', 'R80M1221MBusiness Client', true);
+			liveagent.addCustomDetail('EnterpriseID', finalEID, true);
 			liveagent.addCustomDetail('ContractNumber', '617148', true);
 			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
 			liveagent.addCustomDetail('First Name', firstName, true);
 			liveagent.addCustomDetail('Last Name', lastName, true);
 			liveagent.addCustomDetail('ChatRecordType', 'FSA_SponsorChat', true);
-			liveagent.addCustomDetail('Token', 'This is me, promise', true);
+			liveagent.addCustomDetail('Token', token, true);
 			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
