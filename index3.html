@@ -65,16 +65,17 @@
 			//	.saveToTranscript('RecordTypeId');
 			
 
-			//liveagent.findOrCreate('Case')
-			//	.map('Origin', 'CaseOrigin')
-			//	.map('Subject', 'CaseSubject')
-			//	.map('Topic__c', 'CaseTopic')
-			//	.showOnCreate(); 
+			liveagent.findOrCreate('Case')
+				.map('Origin', 'CaseOrigin')
+				.map('Subject', 'CaseSubject')
+				.map('Topic__c', 'CaseTopic')
+				.saveToTranscript('CaseId')
+				.showOnCreate(); 
 			
-			liveagent.findOrCreate('RIS_FSA_HOLD_SOLD_DATE__c')
-				.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, true)
-				.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, true)
-				.showOnCreate();
+			//liveagent.findOrCreate('RIS_FSA_HOLD_SOLD_DATE__c')
+			//	.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, true)
+			//	.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, true)
+			//	.showOnCreate();
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
