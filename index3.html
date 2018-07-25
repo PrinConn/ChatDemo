@@ -29,8 +29,8 @@
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
-			liveagent.addCustomDetail('StartDate', '2018-07-25', true);
-			liveagent.addCustomDetail('StopDate', '2018-07-30', true);
+			liveagent.addCustomDetail('StartDate', '2017-11-11', true);
+			liveagent.addCustomDetail('StopDate', '2017-11-11', true);
 			
 			liveagent.findOrCreate('Contract')
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
@@ -60,8 +60,8 @@
 			//	.showOnCreate(); 
 			
 			liveagent.findOrCreate('RIS_FSA_HOLD_SOLD_DATE__c')
-				.map('Hold_Sold_Date_Start__c', 'StartDate', false, false, true)
-				.map('Hold_Sold_Date_Stop__c', 'StopDate', false, false, true)
+				.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, false)
+				.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, false)
 				.showOnCreate();
 			
 			liveagent.setName(name);
