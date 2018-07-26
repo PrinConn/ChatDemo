@@ -77,14 +77,6 @@
 				.linkToEntity('Case', 'Contract__c')
 				.showOnCreate();
 			
-			liveagent.findOrCreate('Case')
-				.map('RecordType', 'CaseRecordType', false, false, true)
-				.map('Origin', 'CaseOrigin', false, false, true)
-				.map('Topic__c', 'CaseTopic', false, false, true)
-				.map('Subject', 'CaseSubject', false, false, true)
-				.saveToTranscript('CaseId')
-				.showOnCreate();
-			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
 			liveagent.setChatWindowHeight(500);
