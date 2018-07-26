@@ -39,7 +39,7 @@
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('LiveChatTranscriptRecordType', '0122C000000LCmnQAG', true);
-			liveagent.addCustomDetail('CaseRecordType', '012180000008r0EAAQ'); 
+			liveagent.addCustomDetail('CaseRecordType', '0122C000000CpRvQAK'); 
 			liveagent.addCustomDetail('EnterpriseID', finalEID, true);
 			liveagent.addCustomDetail('ContractNumber', '617148', true);
 			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
@@ -50,12 +50,14 @@
 			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
 			liveagent.addCustomDetail('CaseTopic', pageName, true);
+			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
 			liveagent.findOrCreate('Case')
 				.map('RecordType', 'CaseRecordType', false, false, true)
 				.map('Origin', 'CaseOrigin', false, false, true)
 				.map('Topic__c', 'CaseTopic', false, false, true)
+				.map('Subject', 'CaseSubject', false, false, true)
 				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
