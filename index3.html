@@ -21,7 +21,9 @@
 							  document.getElementById('liveagent_button_offline_5732C000000CaZf'));
 			});
 		</script>
-		<script type='text/javascript' src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/43.0/deployment.js'></script>
+		<script type='text/javascript'
+			src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/43.0/deployment.js'>
+		</script>
 		<script type='text/javascript'>
 		
 			var firstName = 'John';
@@ -40,28 +42,19 @@
 			liveagent.addCustomDetail('CaseRecordType', '0122C000000CpRvQAK'); 
 			liveagent.addCustomDetail('EnterpriseID', finalEID, true);
 			liveagent.addCustomDetail('ContractNumber', '617148', true);
-			liveagent.addCustomDetail('Contact E-mail', 'johndoe@gmail.com');
 			liveagent.addCustomDetail('First Name', firstName, true);
 			liveagent.addCustomDetail('Last Name', lastName, true);
 			liveagent.addCustomDetail('ChatRecordType', 'FSA_SponsorChat', true);
 			liveagent.addCustomDetail('Token', token, true);
-			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
 			liveagent.addCustomDetail('CaseTopic', pageName, true);
 			liveagent.addCustomDetail('CaseSubject', pageName, true);
-			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
 			liveagent.findOrCreate('ChatToken__c')
 				.map('Visitor_Token__c', 'Token', false, false, true)
 				.map('Deployment_Key_Setting__c', 'ChatDeployment', false, false, true)
 				.map('Contact__c', 'Contact', false, false, true)
 				.saveToTranscript('ChatToken__c');
-			
-			liveagent.findOrCreate('Contact')
-				.map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
-				.saveToTranscript('ContactId')
-				.showOnCreate()
-				.linkToEntity('ChatToken__c', 'Contact__c');
 			
 			liveagent.findOrCreate('Case')
 				.map('RecordType', 'CaseRecordType', false, false, true)
@@ -76,6 +69,13 @@
 				.saveToTranscript('Chat_Contract__c')
 				.linkToEntity('Case', 'Contract__c')
 				.showOnCreate();
+			
+			liveagent.findOrCreate('Contact')
+				.map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
+				.saveToTranscript('ContactId')
+				.showOnCreate()
+				.linkToEntity('ChatToken__c', 'Contact__c')
+				.linkToEntity('Case', 'ContactId');
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
