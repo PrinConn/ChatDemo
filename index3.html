@@ -52,9 +52,12 @@
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
-			liveagent.findOrCreate('Contract')
-				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
-				.saveToTranscript('Chat_Contract__c')
+			liveagent.findOrCreate('Case')
+				.map('RecordType', 'CaseRecordType', false, false, true)
+				.map('Origin', 'CaseOrigin', false, false, true)
+				.map('Subject', 'CaseSubject', false, false, true)
+				.map('Topic__c', 'CaseTopic', false, false, true)
+				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
 			liveagent.findOrCreate('ChatToken__c')
@@ -67,24 +70,14 @@
 				.map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
 				.saveToTranscript('ContactId')
 				.showOnCreate()
-				.linkToEntity('ChatToken__c', 'Contact__c');
+				.linkToEntity('ChatToken__c', 'Contact__c')
+				.linkToEntity('Case', 'ContactId');
 			
-			//liveagent.findOrCreate('RecordType').map('DeveloperName', 'ChatRecordType', true, true, false)
-			//	.saveToTranscript('RecordTypeId');
-			
-
-			liveagent.findOrCreate('Case')
-				.map('RecordType', 'CaseRecordType', false, false, true)
-				.map('Origin', 'CaseOrigin', false, false, true)
-				.map('Subject', 'CaseSubject', false, false, true)
-				.map('Topic__c', 'CaseTopic', false, false, true)
-				.saveToTranscript('CaseId')
-				.showOnCreate(); 
-			
-			//liveagent.findOrCreate('RIS_FSA_HOLD_SOLD_DATE__c')
-			//	.map('Hold_Sold_Date_Start__c', 'StartDate', true, true, true)
-			//	.map('Hold_Sold_Date_Stop__c', 'StopDate', true, true, true)
-			//	.showOnCreate();
+			liveagent.findOrCreate('Contract')
+				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
+				.saveToTranscript('Chat_Contract__c')
+				.showOnCreate()
+				.linkToEntity('Case', 'vlocity_ins__ContractId__c');
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
