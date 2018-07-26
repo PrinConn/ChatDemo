@@ -74,8 +74,7 @@
 			liveagent.findOrCreate('Contract')
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
 				.saveToTranscript('Chat_Contract__c')
-				.showOnCreate()
-				.linkToEntity('Case', 'Contract__c');
+				.showOnCreate();
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
