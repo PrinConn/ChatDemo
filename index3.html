@@ -78,7 +78,7 @@
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
 				.saveToTranscript('Chat_Contract__c')
 				.showOnCreate()
-				.linkToEntity('Case', 'vlocity_ins__ContractId__c');
+				.linkToEntity('Case', 'ContractId__c');
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
