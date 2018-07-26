@@ -35,7 +35,7 @@
 			var token = EID + date;
 			console.log(token);
 			var name = firstName + ' ' + lastName;
-			var pageName = 'Unbundled Page 3';
+			var pageName = 'Unbundled Page 7';
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('LiveChatTranscriptRecordType', '0122C000000LCmnQAG', true);
@@ -49,14 +49,12 @@
 			liveagent.addCustomDetail('Token', token, true);
 			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
-			liveagent.addCustomDetail('CaseSubject', pageName, true);
 			liveagent.addCustomDetail('CaseTopic', pageName, true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
 			liveagent.findOrCreate('Case')
 				.map('RecordType', 'CaseRecordType', false, false, true)
 				.map('Origin', 'CaseOrigin', false, false, true)
-				.map('Subject', 'CaseSubject', false, false, true)
 				.map('Topic__c', 'CaseTopic', false, false, true)
 				.saveToTranscript('CaseId')
 				.showOnCreate();
@@ -78,7 +76,7 @@
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
 				.saveToTranscript('Chat_Contract__c')
 				.showOnCreate()
-				.linkToEntity('Case', 'ContractId__c');
+				.linkToEntity('Case', 'Contract__c');
 			
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
