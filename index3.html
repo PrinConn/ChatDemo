@@ -51,14 +51,6 @@
 			liveagent.addCustomDetail('CaseSubject', 'SSC Test 1', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
-			liveagent.findOrCreate('Case')
-				.map('RecordType', 'CaseRecordType', false, false, true)
-				.map('Origin', 'CaseOrigin', false, false, true)
-				.map('Topic__c', 'CaseTopic', false, false, true)
-				.map('Subject', 'CaseSubject', false, false, true)
-				.saveToTranscript('CaseId')
-				.showOnCreate();
-			
 			liveagent.findOrCreate('ChatToken__c')
 				.map('Visitor_Token__c', 'Token', false, false, true)
 				.map('Deployment_Key_Setting__c', 'ChatDeployment', false, false, true)
@@ -74,6 +66,14 @@
 			liveagent.findOrCreate('Contract')
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
 				.saveToTranscript('Chat_Contract__c')
+				.showOnCreate();
+			
+			liveagent.findOrCreate('Case')
+				.map('RecordType', 'CaseRecordType', false, false, true)
+				.map('Origin', 'CaseOrigin', false, false, true)
+				.map('Topic__c', 'CaseTopic', false, false, true)
+				.map('Subject', 'CaseSubject', false, false, true)
+				.saveToTranscript('CaseId')
 				.showOnCreate();
 			
 			liveagent.setName(name);
