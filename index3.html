@@ -35,6 +35,7 @@
 			var token = EID + date;
 			console.log(token);
 			var name = firstName + ' ' + lastName;
+			var pageName = 'Unbundled Page 3';
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('LiveChatTranscriptRecordType', '0122C000000LCmnQAG', true);
@@ -48,7 +49,7 @@
 			liveagent.addCustomDetail('Token', token, true);
 			liveagent.addCustomDetail('Phone Number', '312-555-1212', true);
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);
-			liveagent.addCustomDetail('CaseSubject', 'Unbundled Page 3', true);
+			liveagent.addCustomDetail('CaseSubject', pageName, true);
 			liveagent.addCustomDetail('CaseTopic', 'SSC', true);
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);
 			
