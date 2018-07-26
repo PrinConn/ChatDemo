@@ -69,8 +69,8 @@
 				.map('Contact_Distinct_ID__c', 'EnterpriseID', true, true, false)
 				.saveToTranscript('ContactId')
 				.showOnCreate()
-				.linkToEntity('ChatToken__c', 'Contact__c')
-				.linkToEntity('Case', 'ContactId');
+				.linkToEntity('Case', 'ContactId')
+				.linkToEntity('ChatToken__c', 'Contact__c');
 			
 			liveagent.findOrCreate('Contract')
 				.map('Contract_Source_ID__c','ContractNumber',true,true,false)
