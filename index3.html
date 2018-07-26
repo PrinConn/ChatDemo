@@ -39,16 +39,16 @@
 		
 			var firstName = 'John';								//Must change to be dynamic
 			var lastName = 'Doe';								//Must change to be dynamic
-			var EID = 'R80M1221MBusiness Client';						//Must change to be dynamic
+			var eid = 'R80M1221MBusiness Client';						//Must change to be dynamic
 			var formattedDate = getFormattedTimeStamp();					//Returns properly formatted current timestamp
-			var token = EID + formattedDate;						//Will be dynamic once changes to EID are made
+			var token = eid + formattedDate;						//Will be dynamic once changes to EID are made
 			console.log(token);
 			var name = firstName + ' ' + lastName;						//Must change to be dynamic
 			var pageName = 'Unbundled Page 7';						//Must change to be dynamic
 			
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('CaseRecordType', '0122C000000CpRvQAK', true);	//HARDCODED - Leave As Is
-			liveagent.addCustomDetail('EnterpriseID', EID, true);				//Must change to be dynamic
+			liveagent.addCustomDetail('EnterpriseID', eid, true);				//Must change to be dynamic
 			liveagent.addCustomDetail('ContractNumber', '617148', true);			//Must change to be dynamic		
 			liveagent.addCustomDetail('Token', token, true);				//Must change to be dynamic
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);				//HARDCODED - Leave As Is
