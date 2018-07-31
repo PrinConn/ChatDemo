@@ -64,8 +64,7 @@
 				.saveToTranscript('ChatToken__c');*/
 			
 			liveagent.findOrCreate('RecordType').map('Id','ChatRecordType', true, true, false)
-				.saveToTranscript('RecordTypeId')
-				.showOnCreate();
+				.saveToTranscript('RecordTypeId');
 			
 			liveagent.findOrCreate('Case')
 				.map('RecordTypeId', 'CaseRecordType', false, false, true)
