@@ -55,7 +55,7 @@
 			liveagent.addCustomDetail('CaseTopic', pageName, true);				//Must change to be dynamic
 			liveagent.addCustomDetail('CaseSubject', pageName, true);			//Must change to be dynamic
 			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);		//HARDCODED - Leave as is
-			liveagent.addCustomDetail('ChatRecordType','FSA_SponsorChat');
+			liveagent.addCustomDetail('ChatRecordType','0122C000000LCmnQAG');
 			
 			/*liveagent.findOrCreate('ChatToken__c')
 				.map('Visitor_Token__c', 'Token', false, false, true)
@@ -63,7 +63,7 @@
 				.map('Contact__c', 'Contact', false, false, true)
 				.saveToTranscript('ChatToken__c');*/
 			
-			liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType', true, true, false)
+			liveagent.findOrCreate('RecordType').map('Id','ChatRecordType', true, true, false)
 				.saveToTranscript('RecordTypeId')
 				.showOnCreate();
 			
