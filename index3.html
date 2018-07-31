@@ -68,7 +68,7 @@
 				.showOnCreate();
 			
 			liveagent.findOrCreate('Case')
-				.map('RecordType', 'CaseRecordType', false, false, true)
+				.map('RecordTypeId', 'CaseRecordType', false, false, true)
 				.map('Origin', 'CaseOrigin', false, false, true)
 				.map('Topic__c', 'CaseTopic', false, false, true)
 				.map('Subject', 'CaseSubject', false, false, true)
