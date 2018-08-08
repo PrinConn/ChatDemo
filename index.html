@@ -15,6 +15,8 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('CaseSubject', 'Chat');
   liveagent.addCustomDetail('CaseStatus','New');
   liveagent.addCustomDetail('CaseOrigin','Chat');
+  liveagent.addCustomDetail('ChatSubOrigin', 'RobustWealth', true);	
+  liveagent.addCustomDetail('CaseTopic', 'Robust Wealth', true);	
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
   /*EID for the user */
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
@@ -43,6 +45,8 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .map('Subject', 'CaseSubject', false, false, true) 
     .map('Status', 'CaseStatus', false, false, true) 
     .map('Origin','CaseOrigin',false,false,true)
+    .map('Chat_Sub_Origin__c', 'ChatSubOrigin', false, false, true)
+    .map('Topic__c', 'CaseTopic', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate(); 
   
