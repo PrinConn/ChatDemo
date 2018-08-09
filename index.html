@@ -25,10 +25,10 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','5722C000000Gmgl');
 
-  /* Adding chat record type */
+  /* Adding chat record type 
  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
      .saveToTranscript('RecordTypeId');
-  
+  */
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
     .map('Subject', 'CaseSubject', false, false, true) 
