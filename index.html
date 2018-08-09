@@ -28,7 +28,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* Adding chat record type */
  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
      .saveToTranscript('RecordTypeId')
-     .showOnCreate();
+     .showOnCreate(false);
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
