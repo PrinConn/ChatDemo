@@ -21,7 +21,6 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /*EID for the user */
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
   liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat'); 
-  /*liveagent.addCustomDetail('ChatRecordType','0122C000000LB5iQAG'); */
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','5722C000000Gmgl');
@@ -29,9 +28,6 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* Adding chat record type */
  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
      .saveToTranscript('RecordTypeId');
-   /*liveagent.findOrCreate('RecordType')
-     .map('Id','ChatRecordType',true,true,false)
-     .saveToTranscript('RecordTypeId');   */
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
@@ -48,7 +44,6 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .saveToTranscript('ContactId')
     .showOnCreate()
     .linkToEntity('ChatToken__c','Contact__c')
-    .linkToEntity('Case', 'ContactId');
   
   /* Creating chat token */
   liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true)
