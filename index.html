@@ -24,11 +24,6 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','5722C000000Gmgl');
-
-  /* Adding chat record type */
- liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
-     .saveToTranscript('RecordTypeId')
-     .showOnCreate(false);
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
@@ -51,7 +46,10 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .map('Deployment_Key_Setting__c','ChatDeployment',false,false,true)
     .map('Contact__c','Contact',false,false,true)
     .saveToTranscript('ChatToken__c');
-    
+
+  /* Adding chat record type */
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
+     .saveToTranscript('RecordTypeId');
   
 /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 20');
