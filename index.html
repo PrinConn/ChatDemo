@@ -49,7 +49,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .saveToTranscript('ChatToken__c');
 
   /* Adding chat record type */
-  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,false,false)
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',false,false,false)
      .saveToTranscript('RecordTypeId');
   
 /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
