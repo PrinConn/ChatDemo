@@ -20,8 +20,8 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
   liveagent.addCustomDetail('RecordType','0122C000000L9iKQAS'); 
   /*EID for the user */
   liveagent.addCustomDetail('EnterpriseID','W96M0405MConsumer');
- /* liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat'); */
-  liveagent.addCustomDetail('ChatRecordType','0122C000000LB5iQAG');
+  liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat'); 
+  */ liveagent.addCustomDetail('ChatRecordType','0122C000000LB5iQAG'); */
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','5722C000000Gmgl');
@@ -49,7 +49,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
     .saveToTranscript('ChatToken__c');
 
   /* Adding chat record type */
-  liveagent.findOrCreate('RecordType').map('Id','ChatRecordType',true,true,false)
+  liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
      .saveToTranscript('RecordTypeId');
   
 /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
