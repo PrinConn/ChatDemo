@@ -50,8 +50,7 @@ liveagent.showWhenOffline('5732C000000GmsI', document.getElementById('liveagent_
 
   /* Adding chat record type */
   liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
-     .saveToTranscript('RecordTypeId')
-     .showOnCreate();
+     .saveToTranscript('RecordTypeId');
   
 /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 20');
