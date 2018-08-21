@@ -1,6 +1,6 @@
 <html>
 	<body>
-		This is the body of index3.html
+/*		This is the body of index3.html
 		<a id="liveagent_button_online_5732C0000004CB9" 
 		   href="javascript://Chat" 
 		   style="display: none;"
@@ -31,7 +31,19 @@
 				var formattedDate = year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + seconds + ".000Z";
 				return formattedDate;
 			}
-		</script>
+		</script>  */
+		
+		
+		
+		<a id="liveagent_button_online_57361000000XZAR" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('57361000000XZAR')">Click to Chat</a><div id="liveagent_button_offline_57361000000XZAR" style="display: none;">Chat is not available</div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('57361000000XZAR', document.getElementById('liveagent_button_online_57361000000XZAR'));
+liveagent.showWhenOffline('57361000000XZAR', document.getElementById('liveagent_button_offline_57361000000XZAR'));
+});</script>
+
+		
+		
+		
 		<script type='text/javascript'
 			src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/43.0/deployment.js'>
 		</script>
@@ -39,7 +51,7 @@
 		
 			var firstName = 'John';								//Must change to be dynamic
 			var lastName = 'Doe';								//Must change to be dynamic
-			var eid = 'R80M1221MBusiness Client';						//Must change to be dynamic
+			var eid = '13WBusiness Client';						//Must change to be dynamic
 			var formattedDate = getFormattedTimeStamp();					//Returns properly formatted current timestamp
 			//var token = eid + formattedDate;						//Will be dynamic once changes to EID are made
 			//console.log(token);
@@ -49,12 +61,12 @@
 			liveagent.enableLogging();
 			liveagent.addCustomDetail('CaseRecordType', '012610000002WztAAE', true);	//HARDCODED - Leave As Is
 			liveagent.addCustomDetail('EnterpriseID', eid, true);				//Must change to be dynamic
-			liveagent.addCustomDetail('ContractNumber', '617148', true);			//Must change to be dynamic		
+			liveagent.addCustomDetail('ContractNumber', '532717', true);			//Must change to be dynamic		
 			//liveagent.addCustomDetail('Token', token, true);				//Must change to be dynamic
 			liveagent.addCustomDetail('CaseOrigin', 'Chat', true);				//HARDCODED - Leave As Is
 			liveagent.addCustomDetail('CaseTopic', pageName, true);				//Must change to be dynamic
 			liveagent.addCustomDetail('CaseSubject', pageName, true);			//Must change to be dynamic
-			liveagent.addCustomDetail('ChatDeployment', '5722C0000004CR2', true);		//HARDCODED - Leave as is
+			liveagent.addCustomDetail('ChatDeployment', '57261000000XZAM', true);		//HARDCODED - Leave as is
 			liveagent.addCustomDetail('ChatSubOrigin', 'Plan Sponsor', true);		//HARDCODED - Leave as is
 			
 			/*liveagent.findOrCreate('ChatToken__c')
@@ -88,7 +100,7 @@
 			liveagent.setName(name);
 			liveagent.setChatWindowWidth(500);
 			liveagent.setChatWindowHeight(500);
-			liveagent.init('https://d.la1-c1cs-dfw.salesforceliveagent.com/chat', '5722C0000004CR2', '00D2C0000000qaR');
+			liveagent.init('https://d.la1-c2cs-iad.salesforceliveagent.com/chat', '57261000000XZAM', '00Dg0000006HwWA');
 		</script>
 	</body>
 </html>
