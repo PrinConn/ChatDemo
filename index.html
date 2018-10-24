@@ -20,8 +20,7 @@ liveagent.showWhenOffline('57361000000XZAH', document.getElementById('liveagent_
   liveagent.addCustomDetail('RecordType','012610000007IB0AAM'); 
   /*EID for the user - changed on 9/26 for testin automation contact*/
   liveagent.addCustomDetail('EnterpriseID','F87M9506LConsumer');
-  liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat'); 
-  /* liveagent.addCustomDetail('ChatRecordType','0122C000000LB5iQAG'); */
+  /*  Removed this RISRIC-780  liveagent.addCustomDetail('ChatRecordType','FSA_Ind_Inv_PAS_Chat'); */
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','57261000000XZAH');
@@ -48,9 +47,9 @@ liveagent.showWhenOffline('57361000000XZAH', document.getElementById('liveagent_
     .map('Contact__c','Contact',false,false,true)
     .saveToTranscript('ChatToken__c');
 
-  /* Adding chat record type */
+  /* Adding chat record type   Removed for RISRIC-780
   liveagent.findOrCreate('RecordType').map('DeveloperName','ChatRecordType',true,true,false)
-     .saveToTranscript('RecordTypeId');
+     .saveToTranscript('RecordTypeId'); */
   
 /* Sets the display name of the visitor and where at in the agent console when engaged in a chat */
     liveagent.setName('Jaime from Robust Wealth Step 20');
