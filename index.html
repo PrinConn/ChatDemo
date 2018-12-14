@@ -2,11 +2,12 @@
 <body>
 This is the body
 
-<a id="liveagent_button_online_57361000000XZAH" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('57361000000XZAH')">Chat Now!</a><div id="liveagent_button_offline_57361000000XZAH" style="display: none;">No Agents Available to Chat</div><script type="text/javascript">
+<a id="liveagent_button_online_57361000000XZAH" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('57361000000XZAH')">Chat is available P</a><div id="liveagent_button_offline_57361000000XZAH" style="display: none;">Chat is offline</div><script type="text/javascript">
 if (!window._laq) { window._laq = []; }
 window._laq.push(function(){liveagent.showWhenOnline('57361000000XZAH', document.getElementById('liveagent_button_online_57361000000XZAH'));
 liveagent.showWhenOffline('57361000000XZAH', document.getElementById('liveagent_button_offline_57361000000XZAH'));
 });</script>
+
 
 <script type='text/javascript' src='https://c.la1-c1cs-dfw.salesforceliveagent.com/content/g/js/42.0/deployment.js'></script>
 <script type='text/javascript'>
@@ -19,10 +20,10 @@ liveagent.showWhenOffline('57361000000XZAH', document.getElementById('liveagent_
   liveagent.addCustomDetail('CaseTopic', 'Robust Wealth', true);	
   liveagent.addCustomDetail('RecordType','012610000007IB0AAM'); 
   /*EID for the user - changed on 9/26 for testin automation contact*/
-  liveagent.addCustomDetail('EnterpriseID','F87M9506LConsumer');
+  liveagent.addCustomDetail('EnterpriseID','0036100001OhsRoAAJConsumer');
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
-  liveagent.addCustomDetail('ChatDeployment','57261000000XZAH');
+  liveagent.addCustomDetail('ChatDeployment','2F57261000000XZAH');
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
@@ -52,7 +53,9 @@ liveagent.showWhenOffline('57361000000XZAH', document.getElementById('liveagent_
     liveagent.setChatWindowWidth(500);
 /* Sets the height of the chat window to 500px */
   liveagent.setChatWindowHeight(500);
-  liveagent.init('https://d.la1-c2cs-iad.salesforceliveagent.com/chat', '57261000000XZAH', '00Dg0000006HwWA');
+
+  liveagent.init('https://d.la1-c1-phx.salesforceliveagent.com/chat', '57261000000XZAH', '00D61000000ZPjx');
+
 </script>
 
 </body>
