@@ -40,6 +40,7 @@ liveagent.showWhenOffline('573g000000001DM', document.getElementById('liveagent_
     .saveToTranscript('ContactId')
     .showOnCreate()
     .linkToEntity('ChatToken__c','Contact__c')
+    .linkToEntity('Case','ContactId')
   
   /* Creating chat token */
   liveagent.findOrCreate('ChatToken__c').map('Visitor_Token__c','Token',false,false,true)
