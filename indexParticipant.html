@@ -19,12 +19,14 @@ liveagent.showWhenOffline('573g000000001DM', document.getElementById('liveagent_
   liveagent.addCustomDetail('ChatSubOrigin', 'RobustWealth', true);	
   liveagent.addCustomDetail('CaseTopic', 'Robust Wealth', true);	
   liveagent.addCustomDetail('RecordType','012g00000006NxcAAE');
-  liveagent.addCustomDetail('LinkedContract','800g0000004ESc3AAG'); 
+  liveagent.addCustomDetail('LinkedContract','800g0000004ESc3AAG');
+  liveagent.addCustomDetail('DescriptionField','values strung together here');
   /*EID for the user - changed on 9/26 for testin automation contact*/
   liveagent.addCustomDetail('EnterpriseID','U31U4684RConsumer');
   /* ChatToken Data */
   liveagent.addCustomDetail('Token','This is me, promise');
   liveagent.addCustomDetail('ChatDeployment','2F57261000000XZAH');
+  
   
   liveagent.findOrCreate('Case')
     .map('RecordTypeId', 'RecordType', false, false, true) 
@@ -34,6 +36,7 @@ liveagent.showWhenOffline('573g000000001DM', document.getElementById('liveagent_
     .map('Chat_Sub_Origin__c', 'ChatSubOrigin', false, false, true)
     .map('Topic__c', 'CaseTopic', false, false, true)
     .map('Contract__c', 'LinkedContract', false, false, true)
+    .map('Description', 'DescriptionField', false, false, true)
     .saveToTranscript('CaseId')
     .showOnCreate(); 
   
